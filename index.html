@@ -1,55 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akshay Antony - Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        section {
-            padding: 20px;
-        }
-        .project {
-            margin: 20px 0;
-            padding: 10px;
-            background: #fff;
-            border: 1px solid #ccc;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Images/dp.png">
 </head>
 <body>
     <header>
-        <h1>Hello, I'm Akshay Antony</h1>
-        <p>Welcome to my portfolio!</p>
+        <img class="dp" src="Images/dp.png" alt="Akshay Antony's Picture">
+        <h1>Akshay Antony</h1>
+        <p class="title">Software Engineer</p>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+        </nav>
     </header>
-    <section>
-        <h2>About Me</h2>
-        <p>I'm a Software Engineer. I specialize in C#, WPF, and .NET.</p>
+    
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a software engineer with two years of experience in developing software solutions for healthcare systems, primarily utilizing C#, .NET, and WPF. My master’s degree has allowed me to expand my expertise in areas such as artificial intelligence, machine learning, digital image processing, cybersecurity, high-performance computing, and human-computer interaction. My primary objective in any position I accept is to enhance my technical skills and apply them effectively in practical settings.</p>
+        </section>
+
+        <section id="experience">
+            <h2>Work Experience</h2>
+            <h3>Quest Global | Software Engineer</h3>
+            <p>2021 – 2023</p>
+            <ul>
+                <li>Developed and delivered software solutions for Philips HealthCare systems utilizing C#, .NET, WPF, WinForms, and SQL within a Scrum framework.</li>
+                <li>Executed internal projects for improving productivity within the organization.</li>
+                <li>Effectively collaborated with different teams within projects to share knowledge and seek advice to better meet customer needs.</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project">
+                    <h3>Road Lane Detection in Autonomous Vehicles</h3>
+                    <p>March 2023 - Utilized image processing techniques in Python and OpenCV for effective lane detection, developed as a real-time application for advanced driver assistance systems.</p>
+                </div>
+                <div class="project">
+                    <h3>Meeting Scheduler for Managers</h3>
+                    <p>June 2022 - Created an application to facilitate meeting scheduling for managers and prospective employees using C#, .NET, and WPF.</p>
+                </div>
+                <div class="project">
+                    <h3>Tunerly</h3>
+                    <p>January 2022 - Developed a music library organizer employing C#, .NET, and WPF.</p>
+                </div>
+                <div class="project">
+                    <h3>TruSight</h3>
+                    <p>January 2021 - Implemented a blind navigation system that leverages YOLO V3, Pytesseract, Python, and Google’s Translation Engine.</p>
+                </div>
+                <div class="project">
+                    <h3>Image Enhancement Using StyleGANs</h3>
+                    <p>October 2020 - Presented a seminar on the application of StyleGANs for image enhancement.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-container">
+                <div class="education-card">
+                    <h3>M.Sc. Computational Science</h3>
+                    <p>Laurentian University, Sudbury, ON</p>
+                    <p>2023 - 2025</p>
+                </div>
+                <div class="education-card">
+                    <h3>B.Tech. Computer Science and Engineering</h3>
+                    <p>Mar Baselios College of Engineering and Technology, Thiruvananthapuram, Kerala</p>
+                    <p>2017 - 2021</p>
+                </div>
+            </div>
+        </section>
+
         
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project Title 1</h3>
-            <p>Description of project 1.</p>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>Phone: +1 (416) 731-7632</p>
+            <p>Email: <a href="mailto:romeoantony1999@gmail.com">romeoantony1999@gmail.com</a></p>
+            <p>Location: Sudbury, ON</p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/akshayantony" target="_blank">linkedin.com/in/akshayantony</a></p>
         </div>
-        <div class="project">
-            <h3>Project Title 2</h3>
-            <p>Description of project 2.</p>
-        </div>
-        
-        <h2>Skills</h2>
-        <p>[List of skills]</p>
-        
-        <h2>Contact</h2>
-        <p>Email: [Your Email]</p>
-    </section>
+        <p>&copy; 2024 Akshay Antony. All rights reserved.</p>
+    </footer>
 </body>
 </html>
