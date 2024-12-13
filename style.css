@@ -5,44 +5,77 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @font-face {
     font-family: titleFont;
     src: url("Fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
 }
 
-
-
 body {
     font-family: titleFont, Arial, sans-serif;
     line-height: 1.6;
-    background-color: hsl(0, 0%, 12%);
-    color: #333;
+    background: hsl(0, 0%, 100%);
+    color: #000000;
 }
 
 header {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+    justify-content: center; /* Center elements vertically */
     width: 100%;
-    height: 900px;
+    height: 100vh; /* Full height of the viewport */
     position: relative;
-    background: hsl(0, 0%, 12%);
-    color: #fff;
+    background: hsl(0, 0%, 100%);
+    color: #000000;
     padding: 20px 0;
     text-align: center;
 }
 
 footer {
-    text-align: center;
-    padding: 20px 0;
-    background: hsl(0, 0%, 12%);
-    color: #fff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100vh; /* Full height of the viewport */
+    background: hsl(0, 0%, 100%); /* Background color for footer */
+    color: #000000; /* Text color */
+    padding: 20px; /* Padding for content */
+    text-align: center; /* Center text alignment */
+}
+
+
+section {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100vh; /* Full height of the viewport */
+    scroll-snap-align: start; /* Snap to the start of each section */
+    margin: 0; /* Remove margin */
+    padding: 20px; /* Add padding for content */
+    background: #fff; /* Background color for sections */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for sections */
+    text-align: center; /* Center text alignment */
+}
+
+nav {
+    position: fixed; /* Fix the navbar at the top */
+    top: 0; /* Align to the top */
+    width: 100%; /* Full width */
+    text-align: center; /* Center the nav items */
+    background: hsl(0, 0%, 100%); /* Background color for navbar */
+    z-index: 1000; /* Ensure it stays above other content */
+    padding: 10px 0; /* Add padding for aesthetics */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    padding-bottom: 20px;
+    margin: 0; /* Remove default margin */
 }
 
 nav ul li {
@@ -51,21 +84,21 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
+    color: #000000; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    padding: 10px 20px; /* Add padding for better click area */
+    transition: background 0.3s, color 0.3s; /* Smooth transition for hover effect */
 }
 
 nav ul li a:hover {
-    padding: 10px;
-    background-color: #fff;
-    background-size: cover;
-    color: black;
+    background: #000000; /* Background color on hover */
+    color: #ffffff; /* Text color on hover */
+    padding: 10px 25px; /* Increase padding on hover for a larger background */
 }
-
 .dp {
-    width: 400px;
-    height: 400px;
+    width: 20%;
+    height: 50%;
     border-radius: 50%;
     margin-bottom: 10px;
     object-fit: contain;
@@ -90,13 +123,7 @@ main {
     margin: auto;
 }
 
-section {
-    margin-bottom: 40px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+
 
 h2 {
     color: #000000;
@@ -105,7 +132,7 @@ h2 {
 
 h3 {
     margin-top: 15px;
-    color: #333;
+    color: #000000;
 }
 
 #experience ul{
@@ -119,7 +146,7 @@ h3 {
 }
 
 .project {
-    background: #e9ecef;
+    background: #ffffff;
     padding: 15px;
     border-radius: 8px;
     flex: 1 1 calc(45% - 20px);
@@ -133,7 +160,7 @@ h3 {
 }
 
 .education-card {
-    background: #e9ecef;
+    background: #ffffff;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -141,16 +168,16 @@ h3 {
 
 
 
-.contact-info p {
+#contact p {
     margin: 5px 0;
 }
 
-.contact-info a {
-    color: #fff;
+#contact a {
+    color: #000000;
     text-decoration: none;
 }
 
-.contact-info a:hover {
+#contact a:hover {
     text-decoration: underline;
 }
 
@@ -167,5 +194,9 @@ h3 {
 
     .project {
         flex: 1 1 100%;
+    }
+    .dp {
+        width: 200px; /* Adjust size for smaller screens */
+        height: 200px; /* Keep height equal to width */
     }
 }
