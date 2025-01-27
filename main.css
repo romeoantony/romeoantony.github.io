@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+/* Navigation */
+
+.nav-bar {
+    font-size: 1.2rem;
+    position: fixed;
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    background-color: hsl(43, 94%, 94%);
+}
+
+nav p {
+    font-family: "Playwrite AT", serif;
+}
+
+nav ul {
+    /* margin-right: 3rem; */
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a,
+nav a {
+    color: #292828;
+    padding: 1rem;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover,
+nav a:hover {
+    color: #000000;
+    background: #fae9bd;
+    border-radius: 8px;
+}
+
+/* Header */
+
+header {
+    text-align: center;
+}
+
+header section {
+    padding: 5rem 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50vh;
+    /* border: #000000 solid 1px; */
+}
+
+header h1 {
+    font-family: "Playwrite AT", serif;
+    font-size: 3rem;
+    margin-top: 5rem;
+    font-weight: 600;
+}
+
+header h2 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+/* Image */
+
+#dp {
+    margin-top: 5rem;
+    object-fit: cover;    
+    height: 30rem;
+    width: 30rem;
+    border-radius: 50%;
+}
+
+/* Socials */
+
+.socials {
+    display: flex;
+    justify-content: center;
+}
+
+.socials ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.socials img {
+    height: 2rem;
+    width: 2rem;
+    margin: 1rem;
+    transition: 0.3s ease;
+}
+
+.socials img:hover {
+    transform: scale(1.1);
+}
+
+/* Main */
+
+main section {
+    padding: 5rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50vh;
+    /* border: #000000 solid 1px; */
+}
+
+main section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 2rem;
+    width: 30%;
+}
+
+/* Background Color */
+
+#about {
+    background-color: hsl(43, 86%, 86%);
+}
+
+#experience {
+    background-color: hsl(54, 93%, 83%);
+}
+
+#projects {
+    background-color: hsl(36, 100%, 79%);
+}
+
+#skills {
+    background-color: hsla(71, 96%, 79%, 0.781);
+}
+
+#contact {
+    background-color: hsl(93, 100%, 78%);
+}
+
+/* About */
+
+#about p {
+    margin: 2rem;
+    width: 70%;
+}
+
+#contact a {
+    text-decoration: none;
+    color: #333;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
