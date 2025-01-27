@@ -5,11 +5,15 @@
 }
 
 html {
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
+}
+
+head title {
+    font-family: "Playwrite AT", serif;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: #333;
     line-height: 1.6;
     background-color: #ffffff;
@@ -85,7 +89,7 @@ header h2 {
 
 #dp {
     margin-top: 5rem;
-    object-fit: cover;    
+    object-fit: cover;
     height: 30rem;
     width: 30rem;
     border-radius: 50%;
@@ -140,7 +144,7 @@ main section h2 {
 }
 
 #experience {
-    background-color: hsl(54, 93%, 83%);
+    background-color: hsl(12, 93%, 83%);
 }
 
 #projects {
@@ -158,9 +162,39 @@ main section h2 {
 /* About */
 
 #about p {
-    margin: 2rem;
     width: 70%;
 }
+
+/* Experience */
+
+#experience ul {
+    display: flex;
+    list-style: none;
+}
+
+#experience ul li {
+    width: 15rem;
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: #000000 0 10px 10px;
+    border-radius: 10px;
+    background-color: #ff8585;
+    color: #000000;
+}
+
+#experience ul li h3 {
+    padding-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+#experience ul li p {
+    padding-bottom: 1rem;
+}
+
+/* Contact */
 
 #contact a {
     text-decoration: none;
