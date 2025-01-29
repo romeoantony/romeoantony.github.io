@@ -137,23 +137,23 @@ main section h2 {
 /* Background Color */
 
 #about {
-    background-color: hsl(43, 86%, 86%);
+    background-color: hsl(45, 92%, 95%);
 }
 
 #experience {
-    background-color: hsl(50, 86%, 86%);
+    background-color: hsl(43, 95%, 85%);
 }
 
 #projects {
-    background-color: hsl(60, 86%, 86%);
+    background-color: hsl(43, 94%, 75%);
 }
 
 #skills {
-    background-color: hsl(70, 86%, 86%);
+    background-color: hsl(43, 95%, 85%);
 }
 
 #contact {
-    background-color: hsl(90, 86%, 86%);
+    background-color: hsl(45, 92%, 95%);
 }
 
 /* About */
@@ -177,7 +177,7 @@ main section h2 {
     padding: 1rem;
     box-shadow: #000000 0 10px 10px;
     border-radius: 10px;
-    background-color: hsl(60, 86%, 86%);
+    background-color: hsl(45, 92%, 95%);
     color: #000000;
 }
 
@@ -210,7 +210,7 @@ main section h2 {
     box-shadow: #000000 0 10px 10px;
     border-radius: 10px;
     color: #000000;
-    background-color: hsl(70, 86%, 86%);
+    background-color: hsl(45, 92%, 95%);
 
     display: inline-flex;
     justify-content: center;
