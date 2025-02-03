@@ -162,6 +162,7 @@ main section h2 {
 
 #about p {
     width: 70%;
+    text-align: justify;
 }
 
 /* Experience */
@@ -170,10 +171,14 @@ main section h2 {
     display: flex;
     list-style: none;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
 }
 
 #experience ul li {
     width: 15rem;
+    height: 12rem;
     text-align: center;
     margin: 1rem;
     padding: 1rem;
@@ -181,6 +186,10 @@ main section h2 {
     border-radius: 10px;
     background-color: hsl(45, 92%, 95%);
     color: #000000;
+
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
 }
 
 #experience ul li h3 {
@@ -201,6 +210,9 @@ main section h2 {
     display: flex;
     list-style: none;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
 }
 
 #projects ul li {
@@ -246,6 +258,7 @@ main section h2 {
     display: flex;
     list-style: none;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     width: 70%;
 }
@@ -289,7 +302,7 @@ main section h2 {
     text-align: center;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 70%;
     flex-wrap: wrap;
 }
 
