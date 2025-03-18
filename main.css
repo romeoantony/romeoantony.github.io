@@ -106,7 +106,7 @@ header h2 {
     align-items: center;
 }
 
-.socials img {
+socials img {
     height: 2rem;
     width: 2rem;
     margin: 1rem;
@@ -308,4 +308,119 @@ main section h2 {
 
 #contact .content p {
     margin: 2rem;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    /* Navigation */
+    .nav-bar {
+        position: relative;
+        height: auto;
+        padding: 1rem;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+    }
+
+    /* Header */
+    header section {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    #dp {
+        margin: 0;
+        height: 15rem;
+        width: 15rem;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    header h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Socials */
+
+    .socials {
+        display: flex;
+        justify-content: center;
+    }
+
+    .socials ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+    }
+
+    .socials img {
+        height: 2rem;
+        width: 2rem;
+        margin: 1rem;
+        transition: 0.3s ease;
+    }
+
+    .socials img:hover {
+        transform: scale(1.1);
+    }
+
+    /* Main Sections */
+    main section {
+        flex-direction: column;
+    }
+
+    main section h2 {
+        width: 100%;
+        text-align: center;
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    #about p,
+    #experience ul,
+    #projects ul,
+    #skills ul,
+    #contact .content {
+        width: 100%;
+    }
+
+    #experience ul li,
+    #projects ul li {
+        width: 90%;
+        margin: 1rem 0;
+    }
+
+    /* Skills */
+    #skills ul li {
+        flex-direction: column;
+    }
+
+    #skills img {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    #skills ul li p {
+        font-size: 1rem;
+    }
+
+    /* Contact */
+    #contact .content p {
+        margin: 1rem;
+    }
 }
