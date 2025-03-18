@@ -7,6 +7,14 @@
 :root {
     --mainFont: "Sacramento", serif;
     --secondaryFont: "Montserrat", sans-serif;
+    --text-color: #333;
+    --background-color: #ffffff;
+}
+
+.dark {
+    --text-color: #ffffff;
+    --background-color: #333;
+    color: var(--text-color);
 }
 
 html {
@@ -15,9 +23,9 @@ html {
 
 body {
     font-family: var(--secondaryFont);
-    color: #333;
+    color: var(--text-color);
     line-height: 1.6;
-    background-color: #ffffff;
+    background-color: var(--background-color);
 }
 
 /* Navigation */
@@ -31,6 +39,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 10%;
+    color: var(--text-color);
     background-color: hsl(43, 94%, 94%);
 }
 nav ul {
@@ -54,6 +63,19 @@ nav a:hover {
     color: #000000;
     background: #fae9bd;
     border-radius: 8px;
+}
+
+/* Theme Switcher */
+
+/* #theme {
+    width: 2rem;
+    height: 2rem;
+} */
+
+#theme img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
 }
 
 /* Header */
