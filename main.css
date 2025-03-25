@@ -106,7 +106,7 @@ header h2 {
     align-items: center;
 }
 
-socials img {
+.socials img {
     height: 2rem;
     width: 2rem;
     margin: 1rem;
