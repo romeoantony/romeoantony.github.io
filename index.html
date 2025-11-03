@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Akshay Antony - Software Engineer</title>
+    <!-- Ensure built assets are resolved relative to the page when deployed to GitHub Pages -->
+    <base href="./" />
     <!-- Tailwind via CDN (keeps project zero-build for styling config) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -20,7 +22,7 @@
       };
     </script>
 
-    <link rel="stylesheet" href="/src/main.css" />
+    <link rel="stylesheet" href="src/main.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -34,6 +36,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="src/main.jsx"></script>
   </body>
 </html>
