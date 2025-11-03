@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+export default function initScroll() {
   const mobileMenuButton = document.getElementById("mobile-menu-button");
   const mobileMenu = document.getElementById("mobile-menu");
   const themeToggle = document.getElementById("theme-toggle");
@@ -6,19 +6,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const htmlElement = document.documentElement;
 
   // --- Theme Logic ---
-
   const storedTheme = localStorage.getItem("theme");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
   const initTheme = () => {
     if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
       htmlElement.classList.add("dark");
-      themeIcon.classList.remove("fa-sun");
-      themeIcon.classList.add("fa-moon");
+      if (themeIcon) {
+        themeIcon.classList.remove("fa-sun");
+        themeIcon.classList.add("fa-moon");
+      }
     } else {
       htmlElement.classList.remove("dark");
-      themeIcon.classList.remove("fa-moon");
-      themeIcon.classList.add("fa-sun");
+      if (themeIcon) {
+        themeIcon.classList.remove("fa-moon");
+        themeIcon.classList.add("fa-sun");
+      }
     }
   };
 
@@ -26,35 +29,83 @@ document.addEventListener("DOMContentLoaded", () => {
     if (htmlElement.classList.contains("dark")) {
       htmlElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
-      themeIcon.classList.remove("fa-moon");
-      themeIcon.classList.add("fa-sun");
+      if (themeIcon) {
+        themeIcon.classList.remove("fa-moon");
+        themeIcon.classList.add("fa-sun");
+      }
     } else {
       htmlElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
-      themeIcon.classList.remove("fa-sun");
-      themeIcon.classList.add("fa-moon");
+      if (themeIcon) {
+        themeIcon.classList.remove("fa-sun");
+        themeIcon.classList.add("fa-moon");
+      }
     }
   };
 
+  if (themeToggle) themeToggle.addEventListener("click", toggleTheme);
   initTheme();
 
-  themeToggle.addEventListener("click", toggleTheme);
-
   // --- Mobile Menu Logic ---
-
-  mobileMenuButton.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-
-  document.querySelectorAll("#mobile-menu a").forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileMenu.classList.add("hidden");
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
     });
-  });
+
+    document.querySelectorAll("#mobile-menu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+  }
 
   // --- Skill Tag Highlighting Logic ---
+  // --- Anchor fragment handling (delegated click handler) ---
+  // Use event delegation to reliably catch clicks on anchors, including
+  // dynamically rendered ones. This prevents timing issues if handlers
+  // are attached before React has rendered the DOM.
+  document.addEventListener("click", (e) => {
+    const anchor = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!anchor) return;
+
+    const href = anchor.getAttribute("href");
+    if (!href || !href.startsWith("#")) return;
+    const id = href.slice(1);
+
+    // Debug: log anchor clicks in the console to help troubleshooting
+    // (safe to remove later)
+    // console.debug(`anchor click: ${href}`);
+
+    // If href="#" (empty id), scroll to top
+    if (!id) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      try {
+        history.replaceState(null, "", "#");
+      } catch (err) {}
+      if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.add("hidden");
+      }
+      return;
+    }
+
+    const target = document.getElementById(id);
+    if (target) {
+      e.preventDefault();
+      const y = target.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+      try {
+        history.replaceState(null, "", `#${id}`);
+      } catch (err) {}
+      if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.add("hidden");
+      }
+    }
+  });
 
   const skillsContainer = document.getElementById("skills-container");
+  if (!skillsContainer) return;
+
   const skillTags = skillsContainer.querySelectorAll(".skill-tag");
   const highlightableItems = document.querySelectorAll(".highlightable");
   let activeSkill = null;
@@ -95,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
         tag.classList.add("active");
 
         highlightableItems.forEach((item) => {
-          const itemSkills = item.dataset.skills.split(" ");
+          const itemSkills = (item.dataset.skills || "").split(" ");
           if (itemSkills.includes(skill)) {
             item.classList.remove("dimmed");
             item.classList.add("highlighted");
@@ -107,4 +158,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-});
+}
