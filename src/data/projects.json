@@ -1,5 +1,18 @@
 [
     {
+        "title": "PersonalFinanceManager",
+        "description": "A comprehensive personal finance management tool.",
+        "staticImage": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2070&auto=format&fit=crop",
+        "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif",
+        "tags": [
+            "C#",
+            "WPF",
+            "SQLite"
+        ],
+        "demoLink": null,
+        "repoLink": "https://github.com/romeoantony/PersonalFinanceManager"
+    },
+    {
         "title": "CloudHealthCare",
         "description": "A healthcare management system featuring cloud integration. Built with a mix of JavaScript, C#, and CSS.",
         "staticImage": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
@@ -11,6 +24,34 @@
         ],
         "demoLink": null,
         "repoLink": "https://github.com/romeoantony/CloudHealthCare"
+    },
+    {
+        "title": "XO",
+        "description": "A classic Tic-Tac-Toe game implementation.",
+        "staticImage": "https://images.unsplash.com/photo-1611195974226-a6a9be9dd763?q=80&w=2070&auto=format&fit=crop",
+        "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif",
+        "tags": [
+            "React",
+            "JavaScript"
+        ],
+        "demoLink": "https://salmon-sea-0add67900.3.azurestaticapps.net/",
+        "repoLink": "https://github.com/romeoantony/XO"
+    },
+    {
+        "title": "Organization",
+        "description": "Employee Manager application. Demonstrates CRUD operations using .NET 8, WPF, MVVM pattern, and SQLite with EF Core.",
+        "staticImage": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2555&auto=format&fit=crop",
+        "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif",
+        "tags": [
+            "C#",
+            "WPF",
+            ".NET 8",
+            "SQLite",
+            "EF Core",
+            "MVVM"
+        ],
+        "demoLink": null,
+        "repoLink": "https://github.com/romeoantony/Organization"
     },
     {
         "title": "ImageClassifier",
@@ -53,21 +94,5 @@
         ],
         "demoLink": null,
         "repoLink": "https://github.com/romeoantony/FolderFit"
-    },
-    {
-        "title": "Organization",
-        "description": "Employee Manager application. Demonstrates CRUD operations using .NET 8, WPF, MVVM pattern, and SQLite with EF Core.",
-        "staticImage": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2555&auto=format&fit=crop",
-        "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif",
-        "tags": [
-            "C#",
-            "WPF",
-            ".NET 8",
-            "SQLite",
-            "EF Core",
-            "MVVM"
-        ],
-        "demoLink": null,
-        "repoLink": "https://github.com/romeoantony/Organization"
     }
 ]
