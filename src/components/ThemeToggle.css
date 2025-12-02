@@ -1,0 +1,27 @@
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.theme-toggle:hover {
+  background: var(--bg-secondary);
+  transform: rotate(15deg);
+}
+
+@media (min-width: 768px) {
+  .theme-toggle {
+    top: 2rem;
+    right: 2rem;
+  }
+}

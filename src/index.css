@@ -14,13 +14,42 @@
   font-family: "Outfit", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  
+  /* Default Dark Theme */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --text-primary: #f0f0f0;
+  --text-secondary: #888;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.05);
+  --card-hover-bg: rgba(255, 255, 255, 0.05);
+  --card-hover-border: rgba(255, 255, 255, 0.1);
+  --accent-color: #646cff;
+
   color-scheme: dark;
-  color: #f0f0f0;
-  background-color: #0a0a0a;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:root.light {
+  /* Light Theme Overrides */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f9f9;
+  --text-primary: #213547;
+  --text-secondary: #666;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.1);
+  --card-hover-bg: #f5f5f5;
+  --card-hover-border: rgba(0, 0, 0, 0.2);
+  --accent-color: #646cff;
+
+  color-scheme: light;
 }
 
 body {
@@ -29,8 +58,8 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  background-color: #0a0a0a;
-  background-image: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #0a0a0a 100%);
+  background-color: var(--bg-primary);
+  background-image: radial-gradient(circle at 50% 0%, var(--bg-secondary) 0%, var(--bg-primary) 100%);
   overflow-x: hidden;
 }
 
@@ -70,7 +99,7 @@ a:hover {
 
 .intro-greeting {
   font-size: 1.2rem;
-  color: #888;
+  color: var(--text-secondary);
   font-weight: 500;
   display: block;
   margin-bottom: 0.5rem;
@@ -81,7 +110,7 @@ a:hover {
   font-weight: 700;
   text-align: center;
   margin: 3rem 0 2rem;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .name-title {
@@ -89,7 +118,7 @@ a:hover {
   font-weight: 700;
   letter-spacing: -0.02em;
   margin: 0;
-  background: linear-gradient(to right, #fff, #888);
+  background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -98,7 +127,7 @@ a:hover {
 
 .intro-text {
   font-size: clamp(1rem, 4vw, 1.2rem);
-  color: #888;
+  color: var(--text-secondary);
   margin-top: 1rem;
   font-weight: 400;
 }
@@ -112,7 +141,7 @@ a:hover {
 }
 
 .social-link {
-  color: #e0e0e0;
+  color: var(--text-primary);
   text-decoration: none;
   font-size: 1rem;
   border-bottom: 1px solid transparent;
@@ -122,7 +151,7 @@ a:hover {
 
 .social-link:hover {
   opacity: 1;
-  border-bottom-color: #e0e0e0;
+  border-bottom-color: var(--text-primary);
 }
 
 .app-footer {
@@ -130,7 +159,7 @@ a:hover {
   margin-top: 4rem;
   padding-bottom: 2rem;
   font-size: 0.85rem;
-  color: #444;
+  color: var(--text-secondary);
 }
 
 @keyframes fadeIn {

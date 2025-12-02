@@ -1,7 +1,7 @@
 /* Updated ProjectCard.css: refined modern aesthetic */
 .project-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 0;
     padding: 0;
     margin: 0;
@@ -18,8 +18,8 @@
 
 .project-card:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.1);
+    background: var(--card-hover-bg);
+    border-color: var(--card-hover-border);
 }
 
 .project-image {
@@ -52,18 +52,17 @@
 
 .project-button {
     background: transparent;
-    color: #fff;
+    color: var(--text-primary);
     padding: 0;
     border-radius: 0;
     text-decoration: none;
-    color: #fff;
     letter-spacing: -0.02em;
     line-height: 1.2;
 }
 
 .project-description {
     font-size: 1rem;
-    color: #aaa;
+    color: var(--text-secondary);
     margin-bottom: 1.5rem;
     line-height: 1.6;
     flex-grow: 1;
@@ -80,10 +79,10 @@
 
 .project-tag {
     font-size: 0.75rem;
-    color: #888;
+    color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    border: 1px solid #333;
+    border: 1px solid var(--border-color);
     padding: 0.3rem 0.6rem;
 }
 
