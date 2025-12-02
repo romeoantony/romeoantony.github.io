@@ -61,8 +61,31 @@ a:hover {
   padding: 0 1rem;
 }
 
+.hero-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+.intro-greeting {
+  font-size: 1.2rem;
+  color: #888;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 700;
+  text-align: center;
+  margin: 3rem 0 2rem;
+  color: #fff;
+}
+
 .name-title {
-  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-size: clamp(3rem, 10vw, 5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   margin: 0;

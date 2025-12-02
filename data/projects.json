@@ -1,7 +1,7 @@
 [
     {
         "title": "Personal Finance Manager",
-        "description": "A comprehensive personal finance management tool.",
+        "description": "A comprehensive personal finance tool for tracking expenses, managing budgets, and visualizing financial data.",
         "staticImage": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2070&auto=format&fit=crop",
         "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif",
         "tags": [
@@ -14,7 +14,7 @@
     },
     {
         "title": "Cloud HealthCare",
-        "description": "A healthcare management system featuring cloud integration. Built with a mix of JavaScript, C#, and CSS.",
+        "description": "A modern healthcare management system featuring seamless cloud integration for secure and easy data access.",
         "staticImage": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
         "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif",
         "tags": [
@@ -27,7 +27,7 @@
     },
     {
         "title": "XO",
-        "description": "A classic Tic-Tac-Toe game implementation.",
+        "description": "A classic Tic-Tac-Toe game implementation featuring a clean, responsive, and interactive user interface.",
         "staticImage": "/tictactoe.jpg",
         "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif",
         "tags": [
@@ -39,7 +39,7 @@
     },
     {
         "title": "Organization",
-        "description": "Employee Manager application. Demonstrates CRUD operations using .NET 8, WPF, MVVM pattern, and SQLite with EF Core.",
+        "description": "An efficient Employee Manager application demonstrating robust CRUD operations and effective database management.",
         "staticImage": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2555&auto=format&fit=crop",
         "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif",
         "tags": [
@@ -55,7 +55,7 @@
     },
     {
         "title": "Image Classifier",
-        "description": "A minimal image classification project. Features a FastAPI + PyTorch REST API backend and a .NET WPF desktop client.",
+        "description": "A minimal image classification system utilizing a REST API backend and a responsive desktop client.",
         "staticImage": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop",
         "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlHFRbmaZtBRhXG/giphy.gif",
         "tags": [
@@ -70,7 +70,7 @@
     },
     {
         "title": "Inventory Service",
-        "description": "Inventory management service built with C# and .NET. Includes HTML/CSS for frontend components.",
+        "description": "A robust inventory management service designed to streamline stock tracking and optimize warehouse operations.",
         "staticImage": "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070&auto=format&fit=crop",
         "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9IgzoKnwFNmISR8I/giphy.gif",
         "tags": [
@@ -84,7 +84,7 @@
     },
     {
         "title": "FolderFit",
-        "description": "A file and folder organization utility. Built with C# and WPF, leveraging PowerShell for system operations.",
+        "description": "A smart file and folder organization utility designed to keep your digital workspace structured.",
         "staticImage": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop",
         "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26tn33aiTi1jkl6H6/giphy.gif",
         "tags": [
