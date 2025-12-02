@@ -1,0 +1,73 @@
+[
+    {
+        "title": "CloudHealthCare",
+        "description": "A healthcare management system featuring cloud integration. Built with a mix of JavaScript, C#, and CSS.",
+        "staticImage": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
+        "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif",
+        "tags": [
+            "JavaScript",
+            "C#",
+            "CSS"
+        ],
+        "demoLink": null,
+        "repoLink": "https://github.com/romeoantony/CloudHealthCare"
+    },
+    {
+        "title": "ImageClassifier",
+        "description": "A minimal image classification project. Features a FastAPI + PyTorch REST API backend and a .NET WPF desktop client.",
+        "staticImage": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop",
+        "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlHFRbmaZtBRhXG/giphy.gif",
+        "tags": [
+            "C#",
+            "WPF",
+            "Python",
+            "FastAPI",
+            "PyTorch"
+        ],
+        "demoLink": null,
+        "repoLink": "https://github.com/romeoantony/ImageClassifier"
+    },
+    {
+        "title": "InventoryService",
+        "description": "Inventory management service built with C# and .NET. Includes HTML/CSS for frontend components.",
+        "staticImage": "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070&auto=format&fit=crop",
+        "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9IgzoKnwFNmISR8I/giphy.gif",
+        "tags": [
+            "C#",
+            ".NET",
+            "HTML",
+            "CSS"
+        ],
+        "demoLink": null,
+        "repoLink": "https://github.com/romeoantony/InventoryService"
+    },
+    {
+        "title": "FolderFit",
+        "description": "A file and folder organization utility. Built with C# and WPF, leveraging PowerShell for system operations.",
+        "staticImage": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop",
+        "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26tn33aiTi1jkl6H6/giphy.gif",
+        "tags": [
+            "C#",
+            "WPF",
+            "PowerShell"
+        ],
+        "demoLink": null,
+        "repoLink": "https://github.com/romeoantony/FolderFit"
+    },
+    {
+        "title": "Organization",
+        "description": "Employee Manager application. Demonstrates CRUD operations using .NET 8, WPF, MVVM pattern, and SQLite with EF Core.",
+        "staticImage": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2555&auto=format&fit=crop",
+        "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif",
+        "tags": [
+            "C#",
+            "WPF",
+            ".NET 8",
+            "SQLite",
+            "EF Core",
+            "MVVM"
+        ],
+        "demoLink": null,
+        "repoLink": "https://github.com/romeoantony/Organization"
+    }
+]
