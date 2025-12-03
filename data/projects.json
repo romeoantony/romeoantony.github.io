@@ -5,9 +5,12 @@
         "staticImage": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2070&auto=format&fit=crop",
         "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif",
         "tags": [
+            ".NET 8",
             "C#",
             "WPF",
-            "SQLite"
+            "SQLite",
+            "LiveCharts2",
+            "QuestPDF"
         ],
         "demoLink": null,
         "repoLink": "https://github.com/romeoantony/PersonalFinanceManager"
@@ -18,8 +21,10 @@
         "staticImage": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
         "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif",
         "tags": [
-            "JavaScript",
+            "ASP.NET Core",
+            ".NET 9.0",
             "C#",
+            "React",
             "CSS"
         ],
         "demoLink": null,
@@ -32,7 +37,8 @@
         "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif",
         "tags": [
             "React",
-            "JavaScript"
+            "JavaScript",
+            "CSS"
         ],
         "demoLink": "https://salmon-sea-0add67900.3.azurestaticapps.net/",
         "repoLink": "https://github.com/romeoantony/XO"
@@ -43,9 +49,9 @@
         "staticImage": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2555&auto=format&fit=crop",
         "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif",
         "tags": [
+            ".NET 8",
             "C#",
             "WPF",
-            ".NET 8",
             "SQLite",
             "EF Core",
             "MVVM"
@@ -59,6 +65,7 @@
         "staticImage": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop",
         "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlHFRbmaZtBRhXG/giphy.gif",
         "tags": [
+            ".NET 8",
             "C#",
             "WPF",
             "Python",
@@ -74,8 +81,8 @@
         "staticImage": "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070&auto=format&fit=crop",
         "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9IgzoKnwFNmISR8I/giphy.gif",
         "tags": [
-            "C#",
             ".NET",
+            "C#",
             "HTML",
             "CSS"
         ],
@@ -88,6 +95,7 @@
         "staticImage": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop",
         "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26tn33aiTi1jkl6H6/giphy.gif",
         "tags": [
+            ".NET Framework",
             "C#",
             "WPF",
             "PowerShell"
