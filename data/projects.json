@@ -1,5 +1,20 @@
 [
     {
+        "title": "GreenHaven",
+        "description": "A modern e-commerce platform for plant enthusiasts, featuring a curated collection, care guides, and a seamless shopping experience.",
+        "staticImage": "/greenhaven_thumbnail.png",
+        "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif",
+        "tags": [
+            ".NET 8",
+            "React",
+            "Tailwind CSS",
+            "Zustand",
+            "E-commerce"
+        ],
+        "demoLink": "https://orange-river-0ae9c2100.3.azurestaticapps.net/",
+        "repoLink": "https://github.com/romeoantony/GreenHaven"
+    },
+    {
         "title": "Personal Finance Manager",
         "description": "A comprehensive personal finance tool for tracking expenses, managing budgets, and visualizing financial data.",
         "staticImage": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2070&auto=format&fit=crop",
