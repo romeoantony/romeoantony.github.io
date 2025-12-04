@@ -1,0 +1,131 @@
+.project-details-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--overlay-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+}
+
+.project-details-card {
+    background: var(--bg-secondary);
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s;
+}
+
+.close-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.project-details-image-container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-details-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-details-content {
+    padding: 2rem;
+}
+
+.project-details-title {
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 0;
+    color: var(--text-primary);
+}
+
+.project-details-links {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.project-details-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.project-details-link:hover {
+    background: var(--card-hover-bg);
+    border-color: var(--text-primary);
+}
+
+.project-details-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.project-details-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.project-details-tag {
+    padding: 0.5rem 1rem;
+    background: rgba(100, 108, 255, 0.1);
+    color: var(--accent-color);
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .project-details-overlay {
+        padding: 1rem;
+    }
+    
+    .project-details-image-container {
+        height: 250px;
+    }
+
+    .project-details-title {
+        font-size: 1.8rem;
+    }
+}
