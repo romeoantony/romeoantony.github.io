@@ -86,10 +86,24 @@
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
   padding: 1rem;
-  min-width: 220px;
+  width: 220px;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  pointer-events: none;
+}
+
+/* Adjust tooltip for first items (left edge) */
+.timeline-dot:first-child .dot-tooltip {
+  left: 0;
+  transform: translateX(0);
+}
+
+/* Adjust tooltip for last items (right edge) */
+.timeline-dot:last-child .dot-tooltip {
+  left: auto;
+  right: 0;
+  transform: translateX(0);
 }
 
 .tooltip-type {
