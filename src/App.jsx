@@ -1,5 +1,7 @@
 import React from "react";
 import ProjectsList from "./components/ProjectsList";
+import Timeline from "./components/Timeline";
+import FloatingNav from "./components/FloatingNav";
 import ThemeToggle from "./components/ThemeToggle";
 import { ThemeProvider } from "./context/ThemeContext";
 import "./index.css";
@@ -9,6 +11,7 @@ function App() {
     <ThemeProvider>
       <div className="app-container">
         <ThemeToggle />
+        <FloatingNav />
         <header className="app-header">
           <img src="/HeroIcon.svg" alt="Profile Icon" className="hero-icon" />
           <span className="intro-greeting">Hi, I'm</span>
@@ -36,8 +39,14 @@ function App() {
           </div>
         </header>
         <main>
-          <h2 className="section-title">Projects</h2>
-          <ProjectsList />
+          <section id="journey">
+            <h2 className="section-title">Journey</h2>
+            <Timeline />
+          </section>
+          <section id="projects">
+            <h2 className="section-title">Projects</h2>
+            <ProjectsList />
+          </section>
         </main>
         <footer className="app-footer">
           <p>© 2025 Akshay Antony</p>
@@ -48,3 +57,4 @@ function App() {
 }
 
 export default App;
+

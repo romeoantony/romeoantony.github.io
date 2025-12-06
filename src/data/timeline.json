@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "type": "education",
+    "title": "M.Sc. in Computational Science",
+    "organization": "Laurentian University",
+    "location": "Sudbury, Canada",
+    "startDate": "Sep 2023",
+    "endDate": "May 2025",
+    "description": "Focus areas: Software Engineering, High-Performance Computing, AI/ML, Scientific Computing."
+  },
+  {
+    "id": 2,
+    "type": "work",
+    "title": "AI/ML Data Specialist",
+    "organization": "Outlier AI",
+    "location": "Remote",
+    "startDate": "Sep 2024",
+    "endDate": "Feb 2025",
+    "description": "Contributed to improving multimodal LLMs through supervised dataset generation, model evaluation, and prompt optimization workflows."
+  },
+  {
+    "id": 3,
+    "type": "work",
+    "title": "Software Engineer",
+    "organization": "Quest Global",
+    "location": "Trivandrum, India",
+    "startDate": "Oct 2021",
+    "endDate": "Aug 2023",
+    "description": "Optimized CT imaging pipelines reducing radiation by 50%. Improved UI responsiveness by 70% using async patterns. Built enterprise WPF scheduling system."
+  },
+  {
+    "id": 4,
+    "type": "education",
+    "title": "B.Tech. in Computer Science & Engineering",
+    "organization": "Mar Baselios College of Engineering & Technology",
+    "location": "Trivandrum, India",
+    "startDate": "Aug 2017",
+    "endDate": "Mar 2021",
+    "description": "Key Project: TruSight – Blind Navigation System using YOLOv3 + OCR."
+  },
+  {
+    "id": 5,
+    "type": "work",
+    "title": "Machine Learning Intern",
+    "organization": "Microsoft – IIT Calicut",
+    "location": "Remote / Trivandrum",
+    "startDate": "Oct 2019",
+    "endDate": "Nov 2019",
+    "description": "Built ML classifiers using Python and scikit-learn. Reduced model training time by 20% through optimized preprocessing."
+  }
+]
