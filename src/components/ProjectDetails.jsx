@@ -38,7 +38,7 @@ const ProjectDetails = ({ project, onClose }) => {
                 </div>
 
                 <div className="project-details-content">
-                    <h2 className="project-details-title">{title}</h2>
+                    <h2 className="project-details-title" style={{ fontFamily: "'Gentium Book Plus', serif" }}>{title}</h2>
                     
                     <div className="project-details-links">
                         {repoLink && (

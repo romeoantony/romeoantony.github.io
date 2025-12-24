@@ -1,77 +1,54 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import timelineData from "../data/timeline.json";
-import "./Timeline.css";
+import React from 'react';
+import timelineData from '../data/timeline.json';
+import './Timeline.css';
 
 const Timeline = () => {
-  const [activeItem, setActiveItem] = useState(null);
+    // Sort by start date (most recent first)
+    const sortedData = [...timelineData].sort((a, b) => {
+        const getYear = (date) => parseInt(date.split(' ')[1] || date.split(' ')[0]);
+        return getYear(b.startDate) - getYear(a.startDate);
+    });
 
-  // Parse dates
-  const parseDate = (dateStr) => {
-    const [month, year] = dateStr.split(" ");
-    const monthMap = {
-      Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
-      Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
-    };
-    return new Date(parseInt(year), monthMap[month] || 0);
-  };
+    return (
+        <div className="max-w-4xl mx-auto px-4">
+            <div className="space-y-6">
+                {sortedData.map((item) => (
+                    <div 
+                        key={item.id}
+                        className="group flex gap-8 pb-6 border-b border-neutral-200 dark:border-neutral-800 transition-colors duration-300 hover:border-primary dark:hover:border-primary"
+                    >
+                        {/* Date Column */}
+                        <div className="w-32 flex-shrink-0">
+                            <div className="text-sm font-bold text-neutral-900 dark:text-white font-mono-body transition-colors duration-300">
+                                {item.startDate}
+                            </div>
+                            {item.endDate && (
+                                <div className="text-xs text-neutral-500 dark:text-neutral-400 font-mono-body transition-colors duration-300">
+                                    {item.endDate}
+                                </div>
+                            )}
+                            <div className="mt-1 inline-block px-2 py-0.5 text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 sharp-border transition-colors duration-300">
+                                {item.type}
+                            </div>
+                        </div>
 
-  // Sort by start date (oldest first for left-to-right display)
-  const sortedData = [...timelineData].sort((a, b) => {
-    return parseDate(a.startDate) - parseDate(b.startDate);
-  });
-
-  // Get year range for labels
-  const years = [...new Set(sortedData.flatMap(item => [
-    parseDate(item.startDate).getFullYear(),
-    parseDate(item.endDate).getFullYear()
-  ]))].sort((a, b) => a - b);
-
-  return (
-    <section className="timeline-section">
-      <div className="horizontal-timeline">
-        {/* Year labels */}
-        <div className="timeline-years">
-          {years.map(year => (
-            <span key={year} className="year-label">{year}</span>
-          ))}
-        </div>
-
-        {/* Timeline line with dots */}
-        <div className="timeline-track">
-          <div className="timeline-line"></div>
-          {sortedData.map((item, index) => (
-            <div
-              key={item.id}
-              className={`timeline-dot ${activeItem === item.id ? 'active' : ''} ${item.type}`}
-              style={{ left: `${(index / (sortedData.length - 1)) * 100}%` }}
-              onMouseEnter={() => setActiveItem(item.id)}
-              onMouseLeave={() => setActiveItem(null)}
-              onClick={() => setActiveItem(activeItem === item.id ? null : item.id)}
-            >
-              <span className="dot-marker"></span>
-              <AnimatePresence>
-                {activeItem === item.id && (
-                  <motion.div
-                    className="dot-tooltip"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="tooltip-type">{item.type === "work" ? "Work" : "Education"}</span>
-                    <strong className="tooltip-title">{item.title}</strong>
-                    <span className="tooltip-org">{item.organization}</span>
-                    <span className="tooltip-date">{item.startDate} — {item.endDate}</span>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                        {/* Content Column */}
+                        <div className="flex-1 min-w-0">
+                            <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-1 group-hover:text-primary transition-colors duration-300" style={{ fontFamily: "'Gentium Book Plus', serif" }}>
+                                {item.title}
+                            </h3>
+                            <div className="text-sm text-neutral-600 dark:text-neutral-400 mb-2 font-mono-body transition-colors duration-300">
+                                {item.organization} · {item.location}
+                            </div>
+                            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed font-mono-body transition-colors duration-300">
+                                {item.description}
+                            </p>
+                        </div>
+                    </div>
+                ))}
             </div>
-          ))}
         </div>
-      </div>
-    </section>
-  );
+    );
 };
 
 export default Timeline;

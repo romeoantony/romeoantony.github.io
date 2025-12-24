@@ -46,9 +46,9 @@
         "repoLink": "https://github.com/romeoantony/CloudHealthCare"
     },
     {
-        "title": "XO",
+        "title": "XO - Tic-Tac-Toe",
         "description": "A classic Tic-Tac-Toe game implementation featuring a clean, responsive, and interactive user interface.",
-        "staticImage": "/tictactoe.jpg",
+        "staticImage": "/XO_thumbnail_.png",
         "gifImage": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV4dGZ4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4bnV4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif",
         "tags": [
             "React",

@@ -3,60 +3,44 @@ import { motion } from 'framer-motion';
 import './ProjectCard.css';
 
 const ProjectCard = ({ project, onClick }) => {
-    const { title, description, staticImage, tags, demoLink, repoLink } = project;
+    const { title, description, staticImage, tags } = project;
     
     return (
-        <motion.div 
-            className="project-card" 
+        <div 
+            className="group bg-secondary rounded-sm shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-neutral-100 dark:border-neutral-700 flex flex-col h-full sharp-border cursor-pointer"
             onClick={onClick}
-            whileHover={{ y: -5 }}
-            transition={{ duration: 0.2 }}
         >
-            <motion.div className="project-image-container">
-                <motion.img className="project-image" src={staticImage} alt={title} />
-            </motion.div>
-            <motion.div className="project-content">
-                <div className="project-buttons">
-                    {repoLink && (
-                        <a 
-                            href={repoLink} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="project-button github-icon-link" 
-                            aria-label="GitHub Repo"
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-github">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                            </svg>
-                        </a>
-                    )}
-                    {demoLink && (
-                        <a 
-                            href={demoLink} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="project-button" 
-                            aria-label="Live Demo"
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-external-link">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                <polyline points="15 3 21 3 21 9"></polyline>
-                                <line x1="10" y1="14" x2="21" y2="3"></line>
-                            </svg>
-                        </a>
-                    )}
+            <div className="h-48 overflow-hidden relative">
+                <img 
+                    alt={title} 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                    src={staticImage} 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-white text-sm font-medium font-mono-body">View Case Study →</span>
                 </div>
-                <motion.h3 className="project-title">{title}</motion.h3>
-                <motion.p className="project-description">{description}</motion.p>
-                <div className="project-tags">
+            </div>
+            
+            <div className="p-6 flex-1 flex flex-col">
+                <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-primary transition-colors" style={{ fontFamily: "'Gentium Book Plus', serif" }}>
+                    {title}
+                </h3>
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-4 line-clamp-3 font-mono-body">
+                    {description}
+                </p>
+                
+                <div className="mt-auto flex flex-wrap gap-2">
                     {tags && tags.map((tag, idx) => (
-                        <span key={idx} className="project-tag">{tag}</span>
+                        <span 
+                            key={idx} 
+                            className="px-2 py-1 bg-neutral-100 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300 text-xs font-medium rounded-none border border-neutral-200 dark:border-neutral-600 sharp-border font-mono-body transition-colors duration-300"
+                        >
+                            {tag}
+                        </span>
                     ))}
                 </div>
-            </motion.div>
-        </motion.div>
+            </div>
+        </div>
     );
 };
 
