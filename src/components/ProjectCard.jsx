@@ -22,7 +22,7 @@ const ProjectCard = ({ project, onClick }) => {
             </div>
             
             <div className="p-6 flex-1 flex flex-col">
-                <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-primary transition-colors" style={{ fontFamily: "'Gentium Book Plus', serif" }}>
+                <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-primary transition-colors font-display">
                     {title}
                 </h3>
                 <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-4 line-clamp-3 font-mono-body">

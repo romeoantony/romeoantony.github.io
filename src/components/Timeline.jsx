@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import timelineData from '../data/timeline.json';
 import './Timeline.css';
 
 const Timeline = () => {
     // Sort by start date (most recent first)
-    const sortedData = [...timelineData].sort((a, b) => {
-        const getYear = (date) => parseInt(date.split(' ')[1] || date.split(' ')[0]);
-        return getYear(b.startDate) - getYear(a.startDate);
-    });
+    const sortedData = useMemo(() => {
+        return [...timelineData].sort((a, b) => {
+            const getYear = (date) => parseInt(date.split(' ')[1] || date.split(' ')[0]);
+            return getYear(b.startDate) - getYear(a.startDate);
+        });
+    }, []);
 
     return (
         <div className="max-w-4xl mx-auto px-4">
@@ -34,7 +36,7 @@ const Timeline = () => {
 
                         {/* Content Column */}
                         <div className="flex-1 min-w-0">
-                            <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-1 group-hover:text-primary transition-colors duration-300" style={{ fontFamily: "'Gentium Book Plus', serif" }}>
+                            <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-1 group-hover:text-primary transition-colors duration-300 font-display">
                                 {item.title}
                             </h3>
                             <div className="text-sm text-neutral-600 dark:text-neutral-400 mb-2 font-mono-body transition-colors duration-300">
