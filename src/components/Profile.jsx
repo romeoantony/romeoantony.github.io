@@ -18,7 +18,7 @@ const Profile = () => {
             </div>
             
             <p className="text-sm font-bold tracking-widest text-primary uppercase mb-3 font-display">Hi, I'm</p>
-            <h1 className="text-6xl sm:text-8xl font-normal text-neutral-900 dark:text-white mb-6 tracking-tight transition-colors duration-300 font-display">
+            <h1 className="text-6xl sm:text-8xl font-light text-neutral-900 dark:text-white mb-6 tracking-normal transition-colors duration-300 font-display">
                 Akshay
             </h1>
             <p className="text-xl sm:text-2xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto font-light leading-relaxed mb-10 font-mono-body transition-colors duration-300">

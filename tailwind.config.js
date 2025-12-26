@@ -19,7 +19,7 @@ export default {
       },
       fontFamily: {
         sans: ['IBM Plex Mono', 'monospace'],
-        display: ['Inter', 'sans-serif'],
+        display: ['Gentium Book Plus', 'serif'],
       },
       borderRadius: {
         DEFAULT: "0px",
