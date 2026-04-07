@@ -1,176 +1,336 @@
-.timeline-section {
-  width: 100%;
-  max-width: 900px;
+/* ═══════════════════════════════════════════════════════════════════
+   Zigzag / Alternating Timeline
+   ═══════════════════════════════════════════════════════════════════ */
+
+.zz-timeline {
+  position: relative;
+  max-width: 960px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
-.horizontal-timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-/* Year labels */
-.timeline-years {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 1rem;
-}
-
-.year-label {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-}
-
-/* Timeline track */
-.timeline-track {
-  position: relative;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  padding: 0 1rem;
-}
-
-.timeline-line {
-  position: absolute;
-  left: 1rem;
-  right: 1rem;
-  height: 2px;
-  background: var(--border-color);
-}
-
-/* Dots */
-.timeline-dot {
-  position: absolute;
-  transform: translateX(-50%);
-  cursor: pointer;
-  z-index: 5;
-}
-
-.timeline-dot.active {
-  z-index: 10;
-}
-
-.dot-marker {
-  display: block;
-  width: 16px;
-  height: 16px;
-  background: var(--bg-primary);
-  border: 2px solid var(--text-primary);
-  transition: all 0.2s ease;
-}
-
-.timeline-dot:hover .dot-marker,
-.timeline-dot.active .dot-marker {
-  background: var(--text-primary);
-  transform: scale(1.2);
-}
-
-.timeline-dot.education .dot-marker {
-  border-radius: 0;
-}
-
-.timeline-dot.work .dot-marker {
-  border-radius: 50%;
-}
-
-/* Tooltip */
-.dot-tooltip {
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 1rem;
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  padding: 1rem;
-  width: 220px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  pointer-events: none;
-}
-
-/* Adjust tooltip for first items (left edge) */
-.timeline-dot:first-child .dot-tooltip {
-  left: 0;
-  transform: translateX(0);
-}
-
-/* Adjust tooltip for last items (right edge) */
-.timeline-dot:last-child .dot-tooltip {
-  left: auto;
-  right: 0;
-  transform: translateX(0);
-}
-
-.tooltip-type {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-secondary);
-  font-weight: 500;
-}
-
-.tooltip-title {
-  font-size: 0.9rem;
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-.tooltip-org {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-}
-
-.tooltip-date {
-  font-size: 0.75rem;
-  color: var(--text-secondary);
-  opacity: 0.7;
-  margin-top: 0.25rem;
-}
-
-/* Legend */
-.timeline-legend {
+/* ── Filter tabs ────────────────────────────────────────────────── */
+.zz-filters {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin-top: 1rem;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 3;
 }
 
-.legend-item {
+.zz-filter-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.zz-filter-btn:hover {
+  border-color: var(--accent-color);
+  color: var(--text-primary);
+}
+
+.zz-filter-btn--active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #fff;
+}
+
+/* ── Center spine ───────────────────────────────────────────────── */
+.zz-spine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border-color);
+  transform: translateX(-50%);
+}
+
+/* ── Each row ───────────────────────────────────────────────────── */
+.zz-row {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.zz-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Left-side: card on left half, dot in center */
+.zz-row.zz-left {
+  justify-content: flex-start;
+}
+
+.zz-row.zz-left .zz-card {
+  width: calc(50% - 2.5rem);
+  margin-right: auto;
+  text-align: right;
+}
+
+.zz-row.zz-left .zz-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0.5rem;
+}
+
+/* Right-side: card on right half, dot in center */
+.zz-row.zz-right {
+  justify-content: flex-end;
+}
+
+.zz-row.zz-right .zz-card {
+  width: calc(50% - 2.5rem);
+  margin-left: auto;
+  text-align: left;
+}
+
+.zz-row.zz-right .zz-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0.5rem;
+}
+
+/* ── Connector arrow ────────────────────────────────────────────── */
+.zz-arrow {
+  position: absolute;
+  top: 1rem;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+}
+
+.zz-row.zz-left .zz-arrow {
+  right: -16px;
+  border-left-color: var(--card-border);
+}
+
+.zz-row.zz-right .zz-arrow {
+  left: -16px;
+  border-right-color: var(--card-border);
+}
+
+/* Active card arrow gets accent color border */
+.zz-row.zz-left .zz-card--active .zz-arrow {
+  border-left-color: var(--accent-color);
+}
+
+.zz-row.zz-right .zz-card--active .zz-arrow {
+  border-right-color: var(--accent-color);
+}
+
+/* ── Dot on the spine ───────────────────────────────────────────── */
+.zz-dot {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 2px solid var(--border-color);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.75rem;
+  justify-content: center;
+  z-index: 2;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  flex-shrink: 0;
+}
+
+.zz-dot--active {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent-color) 20%, transparent);
+}
+
+.zz-row:hover .zz-dot {
+  transform: translateX(-50%) scale(1.15);
+  border-color: var(--accent-color);
+}
+
+.zz-dot-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* ── Card ───────────────────────────────────────────────────────── */
+.zz-card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 1.25rem 1.4rem;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.zz-card--active {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 20px -6px color-mix(in srgb, var(--accent-color) 25%, transparent);
+}
+
+.zz-row:hover .zz-card {
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.25);
+}
+
+/* ── Badges ─────────────────────────────────────────────────────── */
+.zz-badges {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Right-aligned cards: badges start left; Left-aligned: badges end right */
+.zz-row.zz-left .zz-badges {
+  justify-content: flex-end;
+}
+
+.zz-row.zz-right .zz-badges {
+  justify-content: flex-start;
+}
+
+.zz-badge-present {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--accent-color);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.zz-badge-type {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+}
+
+.zz-badge-type--work { }
+.zz-badge-type--education { }
+
+/* ── Title ──────────────────────────────────────────────────────── */
+.zz-title {
+  font-family: 'Gentium Book Plus', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.35rem;
+  line-height: 1.35;
+  transition: color 0.25s;
+}
+
+.zz-row:hover .zz-title {
+  color: var(--accent-color);
+}
+
+/* ── Meta (org + location) ─────────────────────────────────────── */
+.zz-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.35rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+}
+
+.zz-row.zz-left .zz-meta {
+  justify-content: flex-end;
+}
+
+.zz-org {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.zz-sep {
+  color: var(--border-color);
+}
+
+.zz-location {
   color: var(--text-secondary);
 }
 
-.legend-dot {
-  width: 10px;
-  height: 10px;
-  border: 2px solid var(--text-primary);
+/* ── Dates ──────────────────────────────────────────────────────── */
+.zz-dates {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.65rem;
 }
 
-.legend-dot.circle {
-  border-radius: 50%;
+.zz-date-range {
+  font-weight: 500;
 }
 
-/* Mobile */
-@media (max-width: 640px) {
-  .timeline-track {
-    height: 100px;
+.zz-duration {
+  opacity: 0.7;
+}
+
+/* ── Description ────────────────────────────────────────────────── */
+.zz-desc {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Mobile: collapse to single-column (cards all on right)
+   ═══════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .zz-spine {
+    left: 1.5rem;
   }
 
-  .dot-tooltip {
-    min-width: 180px;
-    padding: 0.75rem;
+  .zz-row.zz-left,
+  .zz-row.zz-right {
+    justify-content: flex-start;
+    padding-left: 3.5rem;
   }
 
-  .dot-marker {
-    width: 14px;
-    height: 14px;
+  .zz-row.zz-left .zz-card,
+  .zz-row.zz-right .zz-card {
+    width: 100%;
+    text-align: left;
+    margin: 0;
+  }
+
+  .zz-row.zz-left .zz-dot,
+  .zz-row.zz-right .zz-dot {
+    left: 1.5rem;
+  }
+
+  /* All arrows point left on mobile */
+  .zz-row.zz-left .zz-arrow {
+    right: auto;
+    left: -16px;
+    border-left-color: transparent;
+    border-right-color: var(--card-border);
+  }
+
+  .zz-row.zz-left .zz-card--active .zz-arrow {
+    border-left-color: transparent;
+    border-right-color: var(--accent-color);
+  }
+
+  .zz-row.zz-left .zz-badges,
+  .zz-row.zz-left .zz-meta {
+    justify-content: flex-start;
   }
 }

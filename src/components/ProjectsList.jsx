@@ -3,7 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import './ProjectsList.css';
 import ProjectCard from './ProjectCard';
 import ProjectDetails from './ProjectDetails';
-import projects from '../../data/projects.json';
+import projects from '../data/projects.json';
 
 const ProjectsList = () => {
     const [selectedId, setSelectedId] = useState(null);

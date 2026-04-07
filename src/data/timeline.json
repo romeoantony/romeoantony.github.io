@@ -1,5 +1,15 @@
 [
   {
+    "id": 6,
+    "type": "work",
+    "title": "Software Engineer",
+    "organization": "Quest Global",
+    "location": "India",
+    "startDate": "Feb 2026",
+    "endDate": "Present",
+    "description": "Rejoined Quest Global as a Software Engineer, building on prior experience in healthcare and enterprise software development with C#, .NET, and modern engineering practices."
+  },
+  {
     "id": 1,
     "type": "education",
     "title": "M.Sc. in Computational Science",

@@ -1,54 +1,124 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import timelineData from '../data/timeline.json';
 import './Timeline.css';
 
+/* ── Helpers ──────────────────────────────────────────────────────── */
+const MONTHS = { Jan:1, Feb:2, Mar:3, Apr:4, May:5, Jun:6, Jul:7, Aug:8, Sep:9, Oct:10, Nov:11, Dec:12 };
+
+const toNum = (dateStr) => {
+    if (!dateStr || dateStr === 'Present') return Infinity;
+    const [mon, yr] = dateStr.split(' ');
+    return parseInt(yr) * 100 + (MONTHS[mon] || 0);
+};
+
+const parseDateParts = (dateStr) => {
+    if (!dateStr || dateStr === 'Present') return null;
+    const [mon, yr] = dateStr.split(' ');
+    return { month: MONTHS[mon] || 1, year: parseInt(yr) };
+};
+
+const calcDuration = (startStr, endStr) => {
+    const s = parseDateParts(startStr);
+    if (!s) return '';
+    const now = new Date();
+    const e = (endStr === 'Present' || !endStr)
+        ? { month: now.getMonth() + 1, year: now.getFullYear() }
+        : parseDateParts(endStr);
+    if (!e) return '';
+    const totalMonths = (e.year - s.year) * 12 + (e.month - s.month) + 1;
+    const yrs = Math.floor(totalMonths / 12);
+    const mos = totalMonths % 12;
+    const parts = [];
+    if (yrs > 0) parts.push(`${yrs} yr${yrs > 1 ? 's' : ''}`);
+    if (mos > 0) parts.push(`${mos} mo${mos > 1 ? 's' : ''}`);
+    return parts.join(' ');
+};
+
+const ICONS = { work: '💼', education: '🎓' };
+const FILTERS = ['all', 'work', 'education'];
+
+/* ── Component ────────────────────────────────────────────────────── */
 const Timeline = () => {
-    // Sort by start date (most recent first)
-    const sortedData = useMemo(() => {
-        return [...timelineData].sort((a, b) => {
-            const getYear = (date) => parseInt(date.split(' ')[1] || date.split(' ')[0]);
-            return getYear(b.startDate) - getYear(a.startDate);
-        });
-    }, []);
+    const [filter, setFilter] = useState('all');
+
+    const sortedData = useMemo(() =>
+        [...timelineData].sort((a, b) => toNum(b.endDate) - toNum(a.endDate)),
+    []);
+
+    const filteredData = useMemo(() =>
+        filter === 'all' ? sortedData : sortedData.filter(item => item.type === filter),
+    [sortedData, filter]);
 
     return (
-        <div className="max-w-4xl mx-auto px-4">
-            <div className="space-y-6">
-                {sortedData.map((item) => (
-                    <div 
-                        key={item.id}
-                        className="group flex gap-8 pb-6 border-b border-neutral-200 dark:border-neutral-800 transition-colors duration-300 hover:border-primary dark:hover:border-primary"
+        <div className="zz-timeline">
+            {/* Filter tabs */}
+            <div className="zz-filters">
+                {FILTERS.map((f) => (
+                    <button
+                        key={f}
+                        className={`zz-filter-btn ${filter === f ? 'zz-filter-btn--active' : ''}`}
+                        onClick={() => setFilter(f)}
                     >
-                        {/* Date Column */}
-                        <div className="w-32 flex-shrink-0">
-                            <div className="text-sm font-bold text-neutral-900 dark:text-white font-mono-body transition-colors duration-300">
-                                {item.startDate}
-                            </div>
-                            {item.endDate && (
-                                <div className="text-xs text-neutral-500 dark:text-neutral-400 font-mono-body transition-colors duration-300">
-                                    {item.endDate}
-                                </div>
-                            )}
-                            <div className="mt-1 inline-block px-2 py-0.5 text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 sharp-border transition-colors duration-300">
-                                {item.type}
-                            </div>
-                        </div>
-
-                        {/* Content Column */}
-                        <div className="flex-1 min-w-0">
-                            <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-1 group-hover:text-primary transition-colors duration-300 font-display">
-                                {item.title}
-                            </h3>
-                            <div className="text-sm text-neutral-600 dark:text-neutral-400 mb-2 font-mono-body transition-colors duration-300">
-                                {item.organization} · {item.location}
-                            </div>
-                            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed font-mono-body transition-colors duration-300">
-                                {item.description}
-                            </p>
-                        </div>
-                    </div>
+                        {f === 'all' ? '🔗' : ICONS[f]} {f.charAt(0).toUpperCase() + f.slice(1)}
+                    </button>
                 ))}
             </div>
+
+            {/* Center spine */}
+            <div className="zz-spine" />
+
+            {filteredData.map((item, index) => {
+                const isPresent = item.endDate === 'Present';
+                const duration = calcDuration(item.startDate, item.endDate);
+                const dateRange = `${item.startDate} — ${item.endDate}`;
+                const side = index % 2 === 0 ? 'left' : 'right';
+
+                return (
+                    <div key={item.id} className={`zz-row zz-${side}`}>
+                        {/* Card */}
+                        <div className={`zz-card ${isPresent ? 'zz-card--active' : ''}`}>
+                            {/* Connector arrow */}
+                            <div className="zz-arrow" />
+
+                            {/* Badges */}
+                            <div className="zz-badges">
+                                {isPresent && <span className="zz-badge-present">Current</span>}
+                                <span className={`zz-badge-type zz-badge-type--${item.type}`}>
+                                    {item.type}
+                                </span>
+                            </div>
+
+                            {/* Title */}
+                            <h3 className="zz-title">{item.title}</h3>
+
+                            {/* Organization + location */}
+                            <div className="zz-meta">
+                                <span className="zz-org">{item.organization}</span>
+                                <span className="zz-sep">·</span>
+                                <span className="zz-location">📍 {item.location}</span>
+                            </div>
+
+                            {/* Dates + duration */}
+                            <div className="zz-dates">
+                                <span className="zz-date-range">{dateRange}</span>
+                                {duration && (
+                                    <span className="zz-duration"> · {duration}</span>
+                                )}
+                            </div>
+
+                            {/* Description */}
+                            {item.description && (
+                                <p className="zz-desc">{item.description}</p>
+                            )}
+                        </div>
+
+                        {/* Center dot */}
+                        <div className={`zz-dot ${isPresent ? 'zz-dot--active' : ''}`}>
+                            <span className="zz-dot-icon">{ICONS[item.type] ?? '📌'}</span>
+                        </div>
+                    </div>
+                );
+            })}
         </div>
     );
 };

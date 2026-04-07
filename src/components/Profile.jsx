@@ -22,7 +22,7 @@ const Profile = () => {
                 Akshay
             </h1>
             <p className="text-xl sm:text-2xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto font-light leading-relaxed mb-10 font-mono-body transition-colors duration-300">
-                Crafting impactful digital experiences through innovative code and design.
+                Software Engineer at Quest Global · Full Stack Developer · AI/RAG Integration
             </p>
             
             <div className="flex items-center space-x-6">
